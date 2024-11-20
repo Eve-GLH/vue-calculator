@@ -1,12 +1,40 @@
 <html>
     <head>
         <title>Calculator</title>
+        <link rel="stylesheet" href="/styles/styles.css" type="text/css">
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
         <script src="app.js" defer></script>
     </head>
     <body>
         <div id="app">
             <h1>Vue Calculator</h1>
+            <form class="calculator" v-on:reset="resetFields" v-on:submit.prevent="calcTotal">
+                <div class="calculator__display">
+                    <p>{{ num1 }} {{ operator }} {{ num2 }} = {{ calcTotal }}</p>
+                </div>
+                <div class="calculator__buttons">
+                    <div>
+                        <label for="number1">First Number</label><input id="number1" v-model.number="num1">
+                    </div>
+                    <div>
+                        <label for="number2">Second Number</label><input id="number2" v-model.number="num2">
+                    </div>
+                    <div>
+                        <input type="radio" name="operatorType" id="plus" value="+" v-model="operator">
+                        <label for="plus">+</label>
+                        <input type="radio" name="operatorType" id="minus" value="-" v-model="operator">
+                        <label for="minus">-</label>
+                        <input type="radio" name="operatorType" id="multiply" value="*" v-model="operator">
+                        <label for="multiply">*</label>
+                        <input type="radio" name="operatorType" id="divide" value="/" v-model="operator">
+                        <label for="divide">/</label>
+                    </div>
+                    <div>
+                        <button type="reset" id="reset">Clear</button>
+                        <button type="submit" id="submit">=</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </body>
 </html>
