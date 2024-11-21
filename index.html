@@ -9,10 +9,9 @@
     <body>
         <div id="app" class="container">
             <h1>Vue Calculator</h1>
-            <p>Don't click the number buttons, they don't work yet and they'll refresh the page.</p>
             <form class="calculator" v-on:reset="resetFields" >
                 <div class="calculator__display">
-                    <p>{{ num1 }} {{ operator }} {{ num2 }} = {{ total }}</p>
+                    <p>{{ display }}</p>
                 </div>
                 <div class="calculator__buttons">
                     <div class="calculator__buttons-numbers">
