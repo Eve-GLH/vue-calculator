@@ -15,23 +15,17 @@
                     <p>{{ num1 }} {{ operator }} {{ num2 }} = {{ total }}</p>
                 </div>
                 <div class="calculator__buttons">
-                    <div>
-                        <label for="number1">First Number: </label><input id="number1" v-model.number="num1">
-                    </div>
-                    <div>
-                        <label for="number2">Second Number: </label><input id="number2" v-model.number="num2">
-                    </div>
                     <div class="calculator__buttons-numbers">
-                        <button class="calc-button calc-button__num">1</button>
-                        <button class="calc-button calc-button__num">2</button>
-                        <button class="calc-button calc-button__num">3</button>
-                        <button class="calc-button calc-button__num">4</button>
-                        <button class="calc-button calc-button__num">5</button>
-                        <button class="calc-button calc-button__num">6</button>
-                        <button class="calc-button calc-button__num">7</button>
-                        <button class="calc-button calc-button__num">8</button>
-                        <button class="calc-button calc-button__num">9</button>
-                        <button class="calc-button calc-button__num">0</button>
+                        <button class="calc-button calc-button__num" @click.prevent="addDigit(1)">1</button>
+                        <button class="calc-button calc-button__num" @click.prevent="addDigit(2)">2</button>
+                        <button class="calc-button calc-button__num" @click.prevent="addDigit(3)">3</button>
+                        <button class="calc-button calc-button__num" @click.prevent="addDigit(4)">4</button>
+                        <button class="calc-button calc-button__num" @click.prevent="addDigit(5)">5</button>
+                        <button class="calc-button calc-button__num" @click.prevent="addDigit(6)">6</button>
+                        <button class="calc-button calc-button__num" @click.prevent="addDigit(7)">7</button>
+                        <button class="calc-button calc-button__num" @click.prevent="addDigit(8)">8</button>
+                        <button class="calc-button calc-button__num" @click.prevent="addDigit(9)">9</button>
+                        <button class="calc-button calc-button__num" @click.prevent="addDigit(0)">0</button>
                     </div>
                     <div class="calculator__buttons-operators">
                         <button class="calc-button" @click.prevent="setOperator('+')">+</button>
